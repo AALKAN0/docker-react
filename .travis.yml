@@ -1,0 +1,9 @@
+sudo: reqired
+services:
+  - docker
+
+before_install: 
+  - docker build -t ahmetalkan/docker-react -f Dockerfile.dev .
+
+script: 
+  - docker run ahmetalkan/docker-react npm run test -- --coverage
